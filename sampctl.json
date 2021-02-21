@@ -1,14 +1,5 @@
 {
     "type": "sampctl",
-    "data": {
-        "dependencies": {
-            "type": "string",
-            "desc": "necessary os packages",
-            "display": "dependencies",
-            "value": "",
-            "userEdit": true
-        }
-    },
     "display": "sampctl",
     "install": [
         {
@@ -20,15 +11,28 @@
     ],
     "run": {
         "command": "sampctl p run",
-        "stopCode": 2,
+        "stopCode": 1,
         "environmentVars": {},
         "pre": [],
         "post": []
     },
     "supportedEnvironments": [
         {
+            "type": "docker"
+        },
+        {
             "type": "tty"
         }
     ],
-    "name": "sampctl"
+    "name": "sampctl",
+    "data": {
+        "dependencies": {
+            "required": false,
+            "userEdit": true,
+            "display": "dependencies",
+            "desc": "necessary os packagesq",
+            "type": "string",
+            "value": ""
+        }
+    }
 }
