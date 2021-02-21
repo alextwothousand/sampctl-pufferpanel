@@ -1,0 +1,171 @@
+{
+    "type": "SA-MP",
+    "data": {
+        "Language": {
+            "type": "string",
+            "desc": "language",
+            "display": "language",
+            "value": "English",
+            "userEdit": true
+        },
+        "announce": {
+            "type": "string",
+            "desc": "announce",
+            "display": "announce",
+            "value": "0",
+            "userEdit": true
+        },
+        "chatlogging": {
+            "type": "string",
+            "desc": "chatogging",
+            "display": "chatlogging",
+            "value": "0",
+            "userEdit": true
+        },
+        "filterscripts": {
+            "type": "string",
+            "desc": "filterscripts",
+            "display": "filterscripts",
+            "value": "base gl_actions gl_property gl_realtime",
+            "userEdit": true
+        },
+        "gamemode0": {
+            "type": "string",
+            "desc": "gamemode0",
+            "display": "gamemode0",
+            "value": "grandlarc 1",
+            "userEdit": true
+        },
+        "hostname": {
+            "type": "string",
+            "desc": "hostname",
+            "display": "hostname",
+            "value": "SA-MP 0.3 Server",
+            "userEdit": true
+        },
+        "incar_rate": {
+            "type": "string",
+            "desc": "incar_rate",
+            "display": "incar_rate",
+            "value": "40",
+            "userEdit": true
+        },
+        "lanmode": {
+            "type": "integer",
+            "desc": "lanmode",
+            "display": "lanmode",
+            "value": "0",
+            "userEdit": true
+        },
+        "maxnpc": {
+            "type": "string",
+            "desc": "maxpnc",
+            "display": "maxnpc",
+            "value": "0",
+            "userEdit": true
+        },
+        "maxplayers": {
+            "type": "string",
+            "desc": "maxplayers",
+            "display": "maxplayers",
+            "value": "50",
+            "userEdit": true
+        },
+        "onfoot_rate": {
+            "type": "string",
+            "desc": "onfoot_rate",
+            "display": "onfoot_rate",
+            "value": "40",
+            "userEdit": true
+        },
+        "plugins": {
+            "type": "string",
+            "desc": "plugins",
+            "display": "plugins",
+            "value": "",
+            "userEdit": true
+        },
+        "port": {
+            "type": "string",
+            "desc": "port",
+            "display": "port",
+            "value": "7777",
+            "userEdit": true
+        },
+        "query": {
+            "type": "string",
+            "desc": "query",
+            "display": "query",
+            "value": "1",
+            "userEdit": true
+        },
+        "rcon_password": {
+            "type": "string",
+            "desc": "rcon_password",
+            "display": "rcon_password",
+            "value": "changeme",
+            "userEdit": true
+        },
+        "stream_distance": {
+            "type": "string",
+            "desc": "stream_distance",
+            "display": "stream_distance",
+            "value": "300.0",
+            "userEdit": true
+        },
+        "stream_rate": {
+            "type": "string",
+            "desc": "stream_rate",
+            "display": "stream_rate",
+            "value": "100.0",
+            "userEdit": true
+        },
+        "weapon_rate": {
+            "type": "string",
+            "desc": "weapon_rate",
+            "display": "weapon_rate",
+            "value": "40",
+            "userEdit": true
+        },
+        "weburl": {
+            "type": "string",
+            "desc": "weburl",
+            "display": "weburl",
+            "value": "www.sa-mp.com",
+            "userEdit": true
+        }
+    },
+    "display": "SA-MP",
+    "install": [
+        {
+            "files": [
+                "http://files.sa-mp.com/samp037svr_R2-1.tar.gz"
+            ],
+            "type": "download"
+        },
+        {
+            "commands": [
+                "tar -xvzf samp037svr_R2-1.tar.gz --strip=1 samp03"
+            ],
+            "type": "command"
+        },
+        {
+            "target": "server.cfg",
+            "text": "echo Executing Server Config...\nlanmode ${lanmode}\nrcon_password ${rcon_password}\nmaxplayers ${maxplayers}\nport ${port}\nhostname ${hostname}\ngamemode0 ${gamemode0}\nplugins ${plugins}\nfilterscripts ${filterscripts}\nchatlogging ${chatlogging}\nannounce ${announce}\nquery ${query}\nweburl ${weburl}\nmaxnpc ${maxnpc}\nLanguage ${Language}\nonfoot_rate ${onfoot_rate}\nincar_rate ${incar_rate}\nweapon_rate ${weapon_rate}\nstream_distance ${stream_distance}\nstream_rate ${stream_distance}",
+            "type": "writefile"
+        }
+    ],
+    "run": {
+        "command": "./samp03svr",
+        "stopCode": 2,
+        "environmentVars": {},
+        "pre": [],
+        "post": []
+    },
+    "supportedEnvironments": [
+        {
+            "type": "tty"
+        }
+    ],
+    "name": "sa-mp"
+}
